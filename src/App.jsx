@@ -1,18 +1,40 @@
-import React from 'react'
+import React from 'react';
+import { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import RewardsTracker from "./pages/RewardsTracker";
+import HomePage from "./pages/HomePage";
+import Fugitives from "./pages/Fugitives";
 import './App.css'
+import Button from "./components/Button";
 
 function App() {
-  return(
+//   const [color, setColor] = useState("grey")
+//   const click = color => {
+//     setColor(color)
+//   }
+// useEffect(()=>{
+//   document.body.style.backgroundColor = color
+// }, [color])
+
+  return (
+    <>
+    {/* <div className = "App">
+      <button onClick = {
+        () => click("yellow")
+      }>Change color</button>
+      <div>How to change the background color of the body</div>
+    </div> */}
+    <Button/>
     <Router>
       <Routes>
-        <Route path="/" element={<RewardsTracker />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/fugitives" element={<Fugitives />} />
       </Routes>
     </Router>
+    </>
   );
 }
   
+
 
 
 export default App
